@@ -5,7 +5,7 @@ export EDITOR='subl -w'
 alias ..='cd ..'
 alias ls='ls -al'
 
-root='/Users/stephen/dev/'
+root='/Users/ssawchukii/dev'
 function cur_dir {
     local dir=$1
     echo ${dir/$root/}
@@ -34,7 +34,7 @@ function proml {
     local GREEN="\033[0;38;5;83m\]"
     local  PINK="\033[38;5;99m\]"
 
-    PS1="\[$GREEN\$(cur_dir \w)\[$PINK\$(parse_git_branch) \[$WHITE> \[$CYAN"
+    PS1="\h\[$GREEN\$(cur_dir \w)\[$PINK\$(parse_git_branch) \[$WHITE> \[$CYAN"
     PS2=">"
 }
 

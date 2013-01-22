@@ -4,6 +4,7 @@ export EDITOR='subl -w'
 
 alias ..='cd ..'
 alias ls='ls -al'
+alias sup='npm install'
 
 root='/Users/ssawchukii/dev'
 function cur_dir {

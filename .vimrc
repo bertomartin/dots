@@ -1,3 +1,5 @@
+execute pathogen#infect()
+
 syntax enable
 colorscheme night
 
@@ -40,10 +42,13 @@ map 0 ^
 let mapleader = ","
 let g:mapleader = ","
 map <leader>ss :setlocal spell!<cr>
+map <C-n> :NERDTreeToggle<CR>
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
 
 function! HasPaste()
-      if &paste
-                return 'PASTE MODE  '
-                    en
-                        return ''
-                      endfunction
+  if &paste
+    return 'PASTE MODE  '
+  en
+  return ''
+endfunction

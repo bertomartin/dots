@@ -27,7 +27,7 @@ set winminheight=5
 set winheight=999
 
 set list
-set listchars=tab:»·,trail:·,eol:™
+set listchars=tab:»·,trail:·,eol:…
 set showmatch
 set mat=2
 

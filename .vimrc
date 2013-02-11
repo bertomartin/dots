@@ -1,7 +1,7 @@
 execute pathogen#infect()
 
 syntax enable
-colorscheme night
+colorscheme blacklight
 
 set fileencoding=utf8
 set encoding=utf8

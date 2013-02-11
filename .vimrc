@@ -1,4 +1,15 @@
+set nocompatible
 execute pathogen#infect()
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle "gmarik/vundle"
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "honza/snipmate-snippets"
+
+Bundle "garbas/vim-snipmate"
 
 syntax enable
 colorscheme blacklight
@@ -9,7 +20,7 @@ set ffs=unix,dos,mac
 
 set foldmethod=syntax
 
-filetype on
+filetype off
 filetype plugin on
 filetype indent on
 

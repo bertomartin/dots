@@ -13,7 +13,13 @@ filetype on
 filetype plugin on
 filetype indent on
 
+set visualbell
+
+set cursorline
+
 set number
+
+set cc=80
 
 set winwidth=80
 set winheight=5

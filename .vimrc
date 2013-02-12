@@ -5,6 +5,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let g:NERDTreeDirArrows=0
 
 Bundle "gmarik/vundle"
 Bundle "MarcWeber/vim-addon-mw-utils"

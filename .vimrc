@@ -33,7 +33,8 @@ set cursorline
 
 set number
 
-set cc=80
+highlight OverLength ctermbg=white ctermfg=darkred guibg=#592929
+match OverLength /\%81v.\+/
 
 set winwidth=80
 set winheight=5

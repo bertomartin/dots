@@ -15,7 +15,7 @@ Bundle "honza/snipmate-snippets"
 Bundle "garbas/vim-snipmate"
 
 syntax enable
-colorscheme blacklight
+colorscheme grape
 
 set fileencoding=utf8
 set encoding=utf8

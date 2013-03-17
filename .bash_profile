@@ -31,9 +31,9 @@ alias  gb='git branch'
 alias  gc='git checkout'
 
 function proml {
-    local  CYAN="\033[0;38;5;87m\]"
-    local WHITE="\033[1;37m\]"
-    local GREEN="\033[0;38;5;83m\]"
+    local  CYAN="\033[0;30m\]"
+    local WHITE="\033[0;37m\]"
+    local GREEN="\033[0;32m\]"
     local  PINK="\033[38;5;99m\]"
 
     PS1="\h\[$GREEN\$(cur_dir \w)\[$PINK\$(parse_git_branch) \[$WHITE> \[$CYAN"

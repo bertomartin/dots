@@ -29,6 +29,7 @@ alias  gf='git fetch -p'
 alias  gm='git commit -m'
 alias  gb='git branch'
 alias  gc='git checkout'
+alias gff='git fetch -p && git rebase origin/master'
 
 function proml {
     local  CYAN="\033[0;30m\]"

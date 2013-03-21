@@ -6,6 +6,7 @@ call vundle#rc()
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let g:NERDTreeDirArrows=0
+let g:nerdtree_tabs_open_on_console_startup=1
 
 Bundle "gmarik/vundle"
 Bundle "MarcWeber/vim-addon-mw-utils"

@@ -12,17 +12,18 @@ Bundle "gmarik/vundle"
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "honza/snipmate-snippets"
-
+Bundle 'itspriddle/vim-jquery'
+Bundle 'jelera/vim-javascript-syntax'
 Bundle "garbas/vim-snipmate"
+Bundle 'altercation/vim-colors-solarized'
 
 syntax enable
-colorscheme grape
 
 set fileencoding=utf8
 set encoding=utf8
 set ffs=unix,dos,mac
 
-set foldmethod=syntax
+set foldmethod=manual
 
 filetype off
 filetype plugin on

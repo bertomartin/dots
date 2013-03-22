@@ -11,3 +11,5 @@
 ### [vim-command-t](https://github.com/wincent/Command-T)
 
 ### Sublime: iPlastic
+
+### http://www.vim.org/scripts/script.php?script_id=3526

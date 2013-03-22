@@ -40,7 +40,7 @@ set number
 highlight OverLength ctermbg=white ctermfg=darkred guibg=#592929
 match OverLength /\%81v.\+/
 
-set winwidth=80
+set winwidth=60
 set winheight=5
 set winminheight=5
 set winheight=999

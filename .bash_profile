@@ -12,6 +12,12 @@ function cur_dir {
     echo ${dir/$root/}
 }
 
+function just_git_branch {
+    local branch=$(parse_git_branch)
+    local length=${#branch}-3
+    echo ${branch:2:length}
+}
+
 function parse_git_branch {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
@@ -29,7 +35,7 @@ alias  gf='git fetch -p'
 alias  gm='git commit -m'
 alias  gb='git branch'
 alias  gc='git checkout'
-alias gff='git fetch -p && git rebase origin/master'
+alias gff="git fetch -p && git rebase origin/\$(just_git_branch)"
 
 function proml {
     local  CYAN="\033[0;30m\]"

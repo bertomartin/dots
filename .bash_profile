@@ -7,13 +7,53 @@ alias ..='cd ..'
 alias ...='cd .. && cd ..'
 alias ls='ls -al'
 alias sup='npm install'
+alias grunt='grunt --stack'
 
-root='/Users/ssawchukii/dev'
-function cur_dir {
-  local dir=$1
-  echo ${dir/$root/}
+# create a play directory.
+# - arg - (optional) name of a generator
+#
+# usage:
+#   $ play
+#       ..creates a directory
+#       ..cds into it
+#
+#   $ play angular
+#       ..creates a directory
+#       ..cds into it
+#       ..runs `yo angular`
+function play {
+  cd ~/dev/play && mkdir yeah-$[($RANDOM % 13843) + 1] && cd $_
+  if [ $1 ]
+  then
+    yo $1
+  fi
 }
 
+# snap over to a generator right quick.
+# - arg - (optional) name of a generator
+#
+# usage:
+#   $ gen angular
+#       ..cds into `generator-angular` directory
+#
+#   $ gen yo
+#       ..cds into `yo` directory
+#
+#   $ gen
+#       ..cds into `generator` directory
+function gen {
+  if [[ -z $1 ]]
+  then
+    cd ~/dev/generator
+  elif [ $1 == 'yo' ]
+  then
+    cd ~/dev/yo
+  else
+    cd ~/dev/generator-$1
+  fi
+}
+
+## git.
 function just_git_branch {
   local branch=$(parse_git_branch)
   local length=${#branch}-3
@@ -22,11 +62,6 @@ function just_git_branch {
 
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-function play {
-  local num=$[($RANDOM % 13843) + 1]
-  cd ~/dev/play && mkdir $num && cd $_
 }
 
 alias gam='git commit -am'
@@ -43,6 +78,3 @@ alias  gm='git commit -m'
 alias  gb='git branch'
 alias  gc='git checkout'
 alias gff="git fetch -p && git rebase origin/\$(just_git_branch)"
-
-
-

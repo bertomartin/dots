@@ -6,6 +6,7 @@ export GIT_EDITOR='vim'
 alias ..='cd ..'
 alias ...='cd .. && cd ..'
 alias ls='ls -al'
+alias dev='cd ~/dev'
 alias sup='npm install'
 alias grunt='grunt --stack'
 
@@ -62,6 +63,27 @@ function just_git_branch {
 
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+function clone {
+  local url=$1;
+  local repo=$2;
+
+  if [[ ${url:0:4} == 'http' || ${url:0:3} == 'git' ]]
+  then
+    # just clone this thing.
+    repo=$(echo $url | awk -F/ '{print $NF}' | sed -e 's/.git$//');
+  elif [[ -z $repo ]]
+  then
+    # my own stuff.
+    repo=$url;
+    url="git@github.com:stephenplusplus/$repo";
+  else
+    # not my own, but I know whose it is.
+    url="git@github.com:$url/$repo.git";
+  fi
+
+  git clone $url $repo && cd $repo && subl .;
 }
 
 alias  gam='git commit -am'
